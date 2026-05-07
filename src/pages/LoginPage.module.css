@@ -1,0 +1,82 @@
+.screen {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+
+.glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(96,165,250,0.06) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  animation: slideUp 0.4s ease;
+}
+
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 32px;
+  font-size: 18px; font-weight: 700;
+}
+
+.logoMark {
+  width: 32px; height: 32px;
+  background: var(--text); color: var(--bg);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800;
+}
+
+.heading { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.sub     { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+
+.chipLabel { font-size: 11px; color: var(--muted); margin-bottom: 8px; font-family: var(--mono); }
+.chips { display: flex; gap: 6px; margin-bottom: 24px; }
+
+.chip {
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 11px; font-family: var(--mono);
+  border: 1px solid var(--border); background: var(--surface2);
+  color: var(--muted2); transition: all 0.15s;
+}
+.chip:hover { border-color: var(--blue); color: var(--blue); }
+
+.error {
+  background: var(--red-dim); border: 1px solid var(--red);
+  border-radius: 6px; padding: 10px 14px;
+  color: var(--red); font-size: 12px; font-family: var(--mono);
+  margin-bottom: 16px;
+}
+
+.field { margin-bottom: 14px; }
+.field label {
+  display: block; font-size: 11px; font-family: var(--mono);
+  color: var(--muted2); margin-bottom: 6px; letter-spacing: 0.5px;
+}
+.field input {
+  width: 100%; padding: 10px 14px;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius); color: var(--text); font-size: 13px; outline: none;
+  transition: border-color 0.2s;
+}
+.field input:focus { border-color: var(--blue); }
+
+.submit {
+  width: 100%; padding: 11px; margin-top: 8px;
+  background: var(--text); color: var(--bg);
+  border: none; border-radius: var(--radius);
+  font-size: 14px; font-weight: 600;
+  transition: opacity 0.2s;
+}
+.submit:hover:not(:disabled) { opacity: 0.88; }
+.submit:disabled { opacity: 0.5; cursor: not-allowed; }
